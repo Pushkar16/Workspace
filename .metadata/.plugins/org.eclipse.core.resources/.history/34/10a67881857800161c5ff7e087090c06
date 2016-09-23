@@ -1,0 +1,16 @@
+package leet;
+
+public class LongestSubstring {
+public int lengthOfLongestSubstring(String s) {
+     return 1;   
+    }
+ public static void main(String[] args)
+ {
+	 int s;
+     LongestSubstring l=new LongestSubstring();
+     s=l.lengthOfLongestSubstring("asasas");
+     System.out.println(s);
+     
+
+}
+}

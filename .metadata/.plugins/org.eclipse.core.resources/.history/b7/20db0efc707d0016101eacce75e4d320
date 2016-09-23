@@ -1,0 +1,18 @@
+
+public class Permutationofother {
+	public boolean ispermu(String a,String b)
+	{
+		if(a.contains(b)&&(a.length()==b.length()))
+		return true;
+		return false;
+		
+	}
+	public static void main(String[] args)
+	{
+		Permutationofother ot=new Permutationofother();
+		
+		boolean b=ot.ispermu("abc", "cba");
+		System.out.println(b);
+	}
+
+}

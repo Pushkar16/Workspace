@@ -1,0 +1,34 @@
+package leet;
+
+public class LongestCommonPrefix {
+
+public String longestCommonPrefix(String[] str) {
+	for(int i=0;i<str.length-1;i++)
+	{
+		if(str[i].length()>str[i+1].length())
+		{
+			String temp=str[i];
+			str[i]=str[i+1];
+			str[i+1]=temp;
+		}
+		
+	}
+	System.out.println(str[0]);
+	return null;
+        
+    }
+private void swap(String string1, String string2) {
+	String temp=string1;
+	string1=string2;
+	string2=temp;
+	
+}
+public static void main(String[] args)
+{
+	String str[]={"sada","adsas","as","Sadasdasda","a"};
+	LongestCommonPrefix cp=new LongestCommonPrefix();
+	cp.longestCommonPrefix(str);
+	
+	
+}
+}

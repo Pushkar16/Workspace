@@ -1,0 +1,67 @@
+package leet;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+
+public class LongestSubstring {
+	public boolean uniqueString(String s)
+	{
+		
+		boolean unique = false;
+		for(char c:s.toCharArray())
+		{
+			if((s.indexOf(c)==s.lastIndexOf(c))&&(s.length()!=1))
+           {
+	            unique=true;
+           }
+			else{
+				unique=false;
+			}
+			
+		}
+		return unique;
+		
+	}
+public int lengthOfLongestSubstring(String s) {
+	ArrayList<Integer> list=new ArrayList<Integer>();
+ 	
+	 for(int i=0;i<s.length();i++)
+	 {
+		Boolean b;
+		for(int j=i+1;j<s.length();j++)
+		{
+	       b=uniqueString(s.substring(i,j));
+	       System.out.println("i :"+i+"j"+j+"b:"+b);
+	       
+	       if(b==false)
+	       {
+	    	   list.add(j-i);
+	    	   break;
+	       }
+	       else
+	       {
+	    	   System.out.println("in else");
+	    	   list.add(s.length()-i-1);
+	       }
+	       
+		}
+	 }
+	 
+	 Collections.sort(list);
+	 System.out.println(list);
+	 return list.get(list.size()-1);
+    }
+ public static void main(String[] args)
+ {
+	 Boolean s;
+	 int answer;
+     LongestSubstring l=new LongestSubstring();
+     s=l.uniqueString("bbb");
+     answer=l.lengthOfLongestSubstring("bbba");
+     System.out.println(answer);
+     
+
+}
+}

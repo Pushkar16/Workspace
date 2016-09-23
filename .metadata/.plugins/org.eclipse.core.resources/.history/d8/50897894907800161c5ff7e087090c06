@@ -1,0 +1,37 @@
+package leet;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class LongestSubstring {
+	public boolean uniqueString(String s)
+	{
+		boolean unique=false;
+		for(char c:s.toCharArray())
+		{
+			if(s.indexOf(c)==s.lastIndexOf(c))
+           {
+	            unique=true;
+           }
+			else{
+				unique=false;
+			}
+			
+		}
+		return unique;
+		
+	}
+public int lengthOfLongestSubstring(String s) {
+	return 0;
+    }
+ public static void main(String[] args)
+ {
+	 Boolean s;
+     LongestSubstring l=new LongestSubstring();
+     s=l.uniqueString("asdwe");
+     System.out.println(s);
+     
+
+}
+}

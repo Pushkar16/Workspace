@@ -1,0 +1,19 @@
+
+public class ZeroMatrix {
+	public static void main(String[] args)
+	{
+		int[][] s=new int[][]{
+			{1,3},{0,4}};
+			int rows=s.length;
+			System.out.println(rows);
+			int cols=s[0].length;
+			for(int i=0;i<rows;i++)
+			{
+				for(int j=0;j<cols;j++)
+				{
+					System.out.println(s[i][j]);
+				}
+			}
+	}
+
+}

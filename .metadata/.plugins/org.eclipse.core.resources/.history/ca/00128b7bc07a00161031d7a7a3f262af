@@ -1,0 +1,54 @@
+package leet;
+
+public class ZigZag {
+	 public String convert(String s, int numRows) {
+		 int cols=(int)Math.pow(2, numRows)-1;
+		 char[][] pattern=new char[numRows][cols];
+		 String answer="";
+		 int i=0,j=0,k=0;
+		 for(j=0;j<cols;j++)
+		 {
+			 for(i=0;i<numRows;i++)
+			 {
+				 /*try{
+			pattern[i][j]=s.charAt(k); 
+			k++;
+				 }
+				 catch(Exception e)
+				 {
+					 pattern[i][j]='\b';
+				 }*/
+				 if(((i%2==0)&&(j%2!=0))||k>=s.length())
+				 {
+					 pattern[i][j]='\b';
+					 //System.out.println(i+","+j);
+				 }
+				 else{
+					 //System.out.println(k);
+					 
+					 pattern[i][j]=s.charAt(k); 
+					 k++;
+				 }
+		 }
+		 }
+		 for(i=0;i<numRows;i++)
+		 {
+			 for(j=0;j<cols;j++)
+			 {
+				 answer=answer+String.valueOf(pattern[i][j]).trim();
+				 //System.out.print(pattern[i][j]);
+			 }	 
+			 
+		 }
+		return answer;
+	        
+	    }
+	 public static void main(String[]args)
+	 {
+		String s;
+		ZigZag z=new ZigZag();
+		s=z.convert("paypalishiring", 3);
+		System.out.println("answer is"+s);
+	 }
+	
+}

@@ -1,0 +1,36 @@
+import java.util.List;
+import java.util.ArrayList;
+
+public class Node {
+	int data;
+	Node next=null;
+	public Node(int d)
+	{
+		data=d;
+	}
+
+	public static void main(String[] args)
+	{
+		Node d=new Node(2);
+		d.add(3);
+		d.add(4);
+		while(d!=null)
+		{
+			System.out.println(d.data);
+			d=d.next;
+		}
+		
+	}
+	public void add(int d)
+	{
+		Node n=new Node(d);
+		Node current=this;
+		while(current!=null)
+		{
+			current=current.next;
+		}
+		current.next=n;
+		while(current!=null)
+		System.out.println(current.data);
+	}
+}

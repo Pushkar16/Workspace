@@ -1,0 +1,22 @@
+
+public class AddLinkedList {
+	public static void main(String[] args)
+	{
+		LL head=new LL(1);
+		head.add(7);
+		head.add(1);
+		head.add(6);
+		
+	    LL traverse=head;
+	     //traverse=traverse.removeDuplicates(head);
+	     while(traverse!=null)
+	     {
+	    	 System.out.println(traverse.data);
+	    	 traverse=traverse.next;
+	     }
+	     
+	    
+	
+	}
+
+}

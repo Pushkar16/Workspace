@@ -1,0 +1,59 @@
+package leet;
+
+public class LongestCommonPrefix {
+
+public String longestCommonPrefix(String[] str) {
+	String lcp="";
+	for(int i=0;i<str.length-1;i++)
+	{
+		for(int j=i+1;j<str.length;j++)
+		if(str[i].length()>str[j].length())
+		{
+			String temp=str[i];
+			str[i]=str[j];
+			str[j]=temp;
+		}
+		
+	}
+	try{
+	lcp=findLongestString(str, str[0]);
+	}
+	catch(Exception e)
+	{
+		return"saaa";
+	}
+	return lcp;
+        
+    }
+public String findLongestString(String[] str,String s)
+{
+	//System.out.println(s);
+	
+	String lcp="";
+	int k=s.length();
+	for(int i=0;i<str.length;i++)
+	{
+		if(str[i].contains(s))
+		{
+			
+		   lcp=s;	
+		}
+		else{
+			lcp=findLongestString(str,s.substring(0, k-1));
+			
+		}
+	}
+	return lcp;
+	
+}
+
+public static void main(String[] args)
+{
+	String str[]={"abab","aba","abc"};
+	LongestCommonPrefix cp=new LongestCommonPrefix();
+	String lcp=cp.longestCommonPrefix(str);
+	System.out.println(lcp);
+	
+	
+}
+}

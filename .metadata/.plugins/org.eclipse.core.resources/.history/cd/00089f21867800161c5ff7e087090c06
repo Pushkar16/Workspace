@@ -1,0 +1,41 @@
+package leet;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class LongestSubstring {
+public int lengthOfLongestSubstring(String s) {
+	Boolean b=false;
+	List<Integer> list = new ArrayList<Integer>();
+	for(int i=0;i<s.length();i++)
+	{
+		char a=s.charAt(i);
+		System.out.println(a);
+		for(int j=i+1;j<s.length();j++)
+		{
+			if(a==s.charAt(j))
+			{
+				b=true;
+			  list.add(j-i);	
+			}
+		}
+		
+	}
+	if(b.equals(false))
+	{
+		return s.length();
+	}
+	for(int i:list)
+		System.out.println(i);
+	return 0;   
+    }
+ public static void main(String[] args)
+ {
+	 int s;
+     LongestSubstring l=new LongestSubstring();
+     s=l.lengthOfLongestSubstring("asda");
+     System.out.println(s);
+     
+
+}
+}

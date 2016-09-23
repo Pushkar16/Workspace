@@ -1,0 +1,45 @@
+
+public class PartitionLinkedList {
+	public static void main(String[] args)
+	{
+		int a[]={2,3,5,6,12,43,2,4,5};
+	    	     //traverse=traverse.removeDuplicates(head);
+	    PartitionLinkedList pl=new PartitionLinkedList();
+	    LL head=pl.createList(a);
+	    
+	
+	}
+
+	private LL createList(int[] a) {
+		LL head1=new LL(0);
+		LL head2=new LL(0);
+		
+		for(int i:a)
+		{
+			if(i<3)
+			{
+				head1.add(i);
+			}
+			else
+			{
+				head2.add(i);
+			}
+		}
+		head1=head1.next;
+		LL head=head1;
+		LL prev=null;
+		while(head!=null)
+		{
+			prev=head;
+			head=head.next;
+			
+		}
+		prev.next=head1.next;
+		
+		
+		return head1;
+	}
+
+
+}
+ 

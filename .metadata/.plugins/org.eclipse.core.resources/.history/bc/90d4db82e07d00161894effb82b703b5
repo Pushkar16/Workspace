@@ -1,0 +1,21 @@
+
+public class Rotation {
+	
+	public boolean isSubstring(String s1,String s2)
+	{
+		if(s1.contains(s2))
+		return true;
+	 return false;	
+		
+	}
+	public static void main(String[] args)
+	{
+		Rotation r=new Rotation();
+		String s="saad";
+		String a="ad";
+		boolean b=r.isSubstring(s, a);
+		System.out.println(b);
+				
+	}
+
+}

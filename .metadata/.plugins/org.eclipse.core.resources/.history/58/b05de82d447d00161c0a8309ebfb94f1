@@ -1,0 +1,31 @@
+package leet;
+
+import java.util.Map;
+import java.util.TreeMap;
+
+public class IntegerToRoman {
+	public  String intToRoman(int num) {
+		TreeMap<Integer, String> mp=new TreeMap<Integer, String>();
+        mp.put(1, "I");
+        
+        mp.put(5, "V");
+        mp.put(9, "IX");
+        mp.put(10, "x");
+       
+        mp.put(50, "L");
+        mp.put(100, "C");
+        mp.put(500, "D");
+        mp.put(1000,"M");
+       
+        	int l=mp.ceilingKey(num);
+        	
+	        return mp.get(l);
+	    }
+	public static void main(String[] args)
+	{
+		IntegerToRoman rm=new IntegerToRoman();
+		String s=rm.intToRoman(50);
+		System.out.println(s);
+	}
+
+}

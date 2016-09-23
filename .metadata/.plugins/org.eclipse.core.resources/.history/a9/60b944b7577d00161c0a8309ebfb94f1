@@ -1,0 +1,21 @@
+package leet;
+
+import java.util.List;
+
+public class Threesome {
+	 public List<Integer> threeSum(int[] nums) {
+		return null;
+	        
+	    }
+	 public boolean isZero(List<Integer> a)
+	 {
+		return false;
+		 
+	 }
+	 public static void main(String[] args)
+	 {
+		 Threesome th=new Threesome();
+		 
+	 }
+
+}

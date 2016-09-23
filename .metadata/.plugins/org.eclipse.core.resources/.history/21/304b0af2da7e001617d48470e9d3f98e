@@ -1,0 +1,42 @@
+
+public class LinkedListDuplicates {
+	public static void main(String[] args)
+	{
+		LL head=new LL(1);
+		head.add(3);
+		head.add(4);
+		head.add(5);
+		head.add(3);
+		head.add(5);
+		head.add(1);
+		head.add(2);
+		head.add(4);
+	    LL traverse=head;
+	    while(traverse!=null)
+	    {
+	    	System.out.println(traverse.data);
+	    	traverse=traverse.next;
+	    }
+	}
+
+}
+class LL
+{
+	int data;
+	LL next=null;
+	LL(int data)
+	{
+		this.data=data;
+	}
+	public void add(int d)
+	{
+		LL n=new LL(d);
+		LL current=this;
+		while(current.next!=null)
+		{
+			current=current.next;
+		}
+		current.next=n;
+		
+	}
+}

@@ -1,0 +1,71 @@
+package leet;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+
+public class LongestSubstring {
+	public boolean uniqueString(String s)
+	{
+		
+		boolean unique = false;
+		for(char c:s.toCharArray())
+		{
+			if(s.indexOf(c)==s.lastIndexOf(c))
+           {
+	            unique=true;
+           }
+			else{
+				unique=false;
+			}
+			//System.out.println(s);
+		}
+		return unique;
+		
+	}
+public int lengthOfLongestSubstring(String s) {
+	ArrayList<Integer> list=new ArrayList<Integer>();
+ 	
+	 for(int i=0;i<s.length();i++)
+	 {
+		Boolean b;
+		for(int j=i+1;j<s.length();j++)
+		{
+			
+	       b=uniqueString(s.substring(i,j+1));
+	       
+	       
+	        if(b==false)
+	       {
+	        	int a=j-i
+	        	System.out.println("i :"+i+" j "+j+" b:"+b+" j :"+a);
+	    	   list.add(j-i);
+	    	   break;
+	       }
+	       else
+	       {
+	    	   int a=s.length()-1;
+	    	   System.out.println("i :"+i+" j "+j+" b:"+b+"  j :"+a);
+	    	//   System.out.println("in else");
+	    	   list.add(s.length()-i);
+	       }
+	       
+		}
+	 }
+	 System.out.println(list);
+	 Collections.sort(list);
+	 
+	 return list.get(list.size()-1);
+    }
+ public static void main(String[] args)
+ {
+	 Boolean s;
+	 int answer;
+     LongestSubstring l=new LongestSubstring();
+     answer=l.lengthOfLongestSubstring("abacdea");
+     System.out.println(answer);
+     //System.out.println("bbb".substring(0,1));
+
+}
+}
